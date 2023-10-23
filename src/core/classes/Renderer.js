@@ -1,7 +1,7 @@
-import WebRequest from './WebRequest.js'
-import Interpreter from '../classes/Interpreter.js'
+import WebRequest from '../interfaces/WebRequest.js'
+import Interpreter from './Interpreter.js'
 
-class ContentRenderer extends WebRequest {
+class Renderer extends WebRequest {
   /* Methods */
 
   /**
@@ -71,4 +71,4 @@ class ContentRenderer extends WebRequest {
 
 }
 
-export default ContentRenderer
+export default Renderer

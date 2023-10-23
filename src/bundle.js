@@ -14,8 +14,8 @@ import Policy from './pages/policy/Policy.js'
   const footerLinks = [
     { path: '/policy', label: 'policy' }
   ]
-  const header = new View({ html: '/src/components/header/header.html', links: headerLinks })
-  const footer = new View({ html: '/src/components/footer/footer.html', links: footerLinks })
+  const header = new View({ html: '/src/views/header/header.html', links: headerLinks })
+  const footer = new View({ html: '/src/views/footer/footer.html', links: footerLinks })
   const pages = [
     new Home({ path: '/', title: 'Home Page', before: header, html: '/src/pages/home/home.html', after: footer }),
     new Login({ path: '/login', title: 'LogIn Page', before: header, html: '/src/pages/login/login.html', after: footer }),

@@ -1,6 +1,6 @@
-import ContentRenderer from '../interfaces/ContentRenderer.js'
+import Renderer from './Renderer.js'
 
-class View extends ContentRenderer {
+class View extends Renderer {
   /* Private Properties */
   
   #props

@@ -1,5 +1,5 @@
 /***
-    The new CSS typography site - version 0.1.0
+  The new CSS typography site - version 0.1.0
 ***/
 
 .text-xx-small {
@@ -38,3 +38,18 @@
   font-size: var(--xxx-l-size, xxx-large);
 }
 
+.text-regular {
+  font-weight: var(--font-regular, 400);
+}
+
+.text-bold {
+  font-weight: var(--font-bold, 600);
+}
+
+.title-color {
+  color: var(--main-title-color);
+}
+
+.text-color {
+  color: var(--secondary-title-color);
+}

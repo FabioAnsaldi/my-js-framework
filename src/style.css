@@ -1,17 +1,16 @@
 @import "./css/reset.css" layer(base);
 @import "./css/typography.css" layer(base);
 @import "./css/navigator.css" layer(base);
-@import "./css/header.css" layer(base);
-@import "./css/footer.css" layer(base);
+@import "./css/layout.css" layer(base);
 
 :root {
-  --main-title-color: #cfcfcf;
+  --main-title-color: #414073;
   --secondary-title-color: #60655b;
 
   --main-text-color: #073e75;
   --secondary-text-color: #cbce48;
 
-  --main-link-color: #414073;
+  --main-link-color: #cfcfcf;
   --secondary-link-color: #be9a75;
   
   --main-bg-color: #F4F4ED;
@@ -31,4 +30,9 @@
   --x-l-size: x-large;
   --xx-l-size: xx-large;
   --xxx-l-size: xxx-large;
+
+  --font-regular: 400;
+  --font-bold: 600;
+
+  --section-padding: .8rem 1rem;
 }
