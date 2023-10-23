@@ -6,7 +6,7 @@
   "scripts": {
     "server": "export PORT=4321 && node ./node_modules/.bin/tiny-server ./",
     "timeout": "sleep 1",
-    "echo:index": "npm run timeout && node -e 'console.log(\"http://localhost:4321/index.html\")'",
+    "echo:index": "npm run timeout && node -e 'console.log(\"Visit:\\nhttp://localhost:4321/index.html\")'",
     "start": "npm run echo:index & npm run server & wait",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

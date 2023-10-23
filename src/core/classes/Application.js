@@ -22,10 +22,10 @@ class Application {
    * @return {*} promise
    */
   async bootstrap() {
-    const active = this.retrieveActiveView()
+    const activeView = this.retrieveActiveView()
     this.catchOnPopState()
     this.makeFriendlyPath()
-    this.#root.innerHTML = await active.renderContent()
+    this.#root.innerHTML = await activeView.renderContent()
   }
 
   /**
@@ -46,9 +46,10 @@ class Application {
       return `#!${v.getProps().path}` === hash
     })
     if (view) {
+      view.setProps(Object.assign({}, view.getProps(), { active: true }))
       return view
     } else {
-      return new View({ html: `<h2>404</h2><p>Page Not Found!</p>`, path: '/404', label: '404', title: '404' });
+      return new View({ html: `<h2>404</h2><p>Page Not Found!</p>`, path: '/404', title: '404' });
     }
   }
 

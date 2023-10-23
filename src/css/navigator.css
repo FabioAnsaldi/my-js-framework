@@ -1,0 +1,27 @@
+/***
+    The new CSS navigator component - version 0.1.0
+***/
+
+.navigator {
+  overflow: hidden;
+  background-color: var(--secondary-bg-color, darkgray);
+
+  .navigator__link {
+    float: left;
+    color: var(--main-title-color, grey);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    &:hover {
+      background-color: var(--main-bg-color, gainsboro);
+      color: var(--secondary-title-color, slategrey);
+    }
+
+    &.active {
+      background-color: var(--third-bg-color, royalblue);
+      color: var(--secondary-text-color, lemonchiffon);
+    }
+  }
+}

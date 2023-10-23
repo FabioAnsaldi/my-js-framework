@@ -20,6 +20,9 @@ class Interpreter {
     this.#filters = [{
       filter: "repeat",
       action: this.repeat
+    }, {
+      filter: "route",
+      action: this.route
     }]
   }
 
@@ -34,7 +37,7 @@ class Interpreter {
   repeat(collection, variable, html, props) {
     const parser = new DOMParser()
     const doc = parser.parseFromString(html, "text/html")
-    const elm = doc.body.firstChild.querySelectorAll(`[data-repeat-${collection}]`)
+    const elm = doc.body.firstChild.querySelectorAll(`[repeat-${collection}]`)
     const parentNode = elm[0].parentNode
     let properties = []
     properties = props[collection]
@@ -48,6 +51,18 @@ class Interpreter {
         elm[0].remove()
       }
       parentNode.append(child)
+    })
+    return doc.body.firstChild.outerHTML
+  }
+
+  route(collection, variable, html, props) {
+    const parser = new DOMParser()
+    const doc = parser.parseFromString(html, "text/html")
+    const elm = doc.body.firstChild.querySelectorAll(`[route-active]`)
+    elm.forEach((e) => {
+      if (e.hash === window.location.hash) {
+        e.classList.add('active')
+      }
     })
     return doc.body.firstChild.outerHTML
   }

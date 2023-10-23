@@ -1,0 +1,40 @@
+/***
+    The new CSS typography site - version 0.1.0
+***/
+
+.text-xx-small {
+  font-size: var(--xx-s-size, xx-small);
+}
+
+.text-x-small {
+  font-size: var(--x-s-size, x-small);
+}
+
+.text-small {
+  font-size: var(--s-size, small);
+}
+
+.text-base {
+  font-size: var(--base-size, smaller);
+}
+
+.text-medium {
+  font-size: var(--m-size, medium);
+}
+
+.text-large {
+  font-size: var(--l-size, large);
+}
+
+.text-x-large {
+  font-size: var(--x-l-size, x-large);
+}
+
+.text-xx-large {
+  font-size: var(--xx-l-size, xx-large);
+}
+
+.text-xxx-large {
+  font-size: var(--xxx-l-size, xxx-large);
+}
+

@@ -5,14 +5,12 @@ class ContentRenderer extends WebRequest {
   /* Methods */
 
   /**
-   * @param {Object|Undefined} providedProps
    * @return {*} promise
    */
-  async renderContent(providedProps) {
+  async renderContent() {
     const props = {
       typology: this.constructor.name,
-      ... this.getProps(),
-      ... providedProps || {}
+      ... this.getProps()
     }
     const resource = await this.html()
     const parsedHTML = this.parseHtml(resource, props)
@@ -42,10 +40,10 @@ class ContentRenderer extends WebRequest {
     while ((matched = regex.exec(result)) !== null) {
       const attribute = matched[0].split(' as ')
       const action = attribute[0].split('-')
-      let response = matched.input.replaceAll(`[[${matched[0]}]]`, `data-${attribute[0]}`).trim()
+      let response = matched.input.replaceAll(`[[${matched[0]}]]`, `${attribute[0]}`).trim()
       filters.forEach((obj, i) => {
         if (obj.filter === action[0]) {
-          result = obj.action(action[1], attribute[1], response, props)
+          result = obj.action(action[1], attribute[1], response, Object.assign({}, this.getProps(), props))
         }
       })
     }
